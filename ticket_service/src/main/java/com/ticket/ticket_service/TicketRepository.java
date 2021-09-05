@@ -1,4 +1,4 @@
-package com.ticket.ticket_server;
+package com.ticket.ticket_service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

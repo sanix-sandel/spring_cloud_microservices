@@ -1,4 +1,4 @@
-package com.ticket.ticket_server;
+package com.ticket.ticket_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
