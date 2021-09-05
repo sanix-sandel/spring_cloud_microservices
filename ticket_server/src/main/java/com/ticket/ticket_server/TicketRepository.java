@@ -1,0 +1,6 @@
+package com.ticket.ticket_server;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TicketRepository extends JpaRepository<Ticket, Long> {
+}
