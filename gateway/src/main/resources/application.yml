@@ -1,0 +1,34 @@
+#spring:
+#  application:
+#    name: gateway-server
+#  cloud:
+#   gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+    #cloud:
+   # config:
+    #  uri: http://localhost:8761
+spring:
+  application:
+    name: gateway-server
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+server:
+  port: 8072
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

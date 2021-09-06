@@ -1,9 +1,7 @@
 package com.ticket.user_service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,5 +15,10 @@ public class UserController {
     @GetMapping("")
     public List<User> home(){
         return userService.getAll();
+    }
+
+    @PostMapping("")
+    public String create(@RequestBody UserRequest userRequest){
+        return userService.createUser(userRequest);
     }
 }

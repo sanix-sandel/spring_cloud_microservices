@@ -15,4 +15,12 @@ public class UserServiceImpl implements UserService{
     public List<User> getAll() {
         return userRepository.findAll();
     }
+
+    @Override
+    public String createUser(UserRequest userRequest) {
+        User user=new User();
+        user.setUsername(userRequest.getUsername());
+        userRepository.save(user);
+        return "User successfully created";
+    }
 }

@@ -6,4 +6,5 @@ public interface UserService {
 
     List<User> getAll();
 
+    String createUser(UserRequest userRequest);
 }
