@@ -17,12 +17,19 @@ spring:
   cloud:
     gateway:
       discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+        #locator:
+         # enabled: true
+          #lower-case-service-id: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+          - Path=/user/**
+          filters:
+            - RewritePath=/user/, /
 
 server:
-  port: 8072
+  port: 8888
 
 eureka:
   instance:
@@ -31,4 +38,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://localhost:9102/eureka}
